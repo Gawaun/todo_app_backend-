@@ -1,25 +1,14 @@
 <h1>To do list</h1>
-     <ul>Workshop to do list
-        <li class="color1">
-          <input type="checkbox"/>
-          <a href="show/1"> Introduce group</a>
-          <span>(0 pomodoros)</span>
-        </li>
-          
-        <li class="color2">
-          <input type="checkbox"/>
-          <a href="show/2"> Ice breaker</a>
-          <span class="pom1">(3 pomodoros)</span>
-        </li>
-        
-        <li class="color3">
-          <input type="checkbox"/>
-          <a href="show/3"> teach cd</a>(1 pomodoro)
-        </li>
-        
-        <li class="color4">
-          <input type="checkbox"/>
-          <a href="show/4"> teach index</a>(1 pomodoro)
-        </li>
-    </ul>
-    <a href="new.html">add a new to do</a>
+<ul class="card">
+<% @todos.each do |todo| %>
+  <li>
+    <input type="checkbox" name=""/>
+    <a href="show/<%= todo.id %>"><%= todo.description %></a>
+    <span class="pomodoro-estimate small-pomodoro-estimate"><%= todo.pomodoro_estimate %></span>
+  </li>
+<% end %>
+</ul>
+
+<div id="new-todo-block">
+<a href="/todo/new" class="button add-new-todo-button" id="add-new-todo-button">Add a todo</a>
+</div>
